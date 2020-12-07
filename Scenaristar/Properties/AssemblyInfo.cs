@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("SMG2 Scenario Editor")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Super Hackio Incorporated")]
-[assembly: AssemblyProduct("Scenaristar")]
+[assembly: AssemblyProduct("Scenaristar Extended")]
 [assembly: AssemblyCopyright("Copyright © Super Hackio Incorporated 2019-2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

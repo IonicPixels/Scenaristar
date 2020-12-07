@@ -214,7 +214,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CaptainToad.png" />
-    <Content Include="Scenaristar.ico" />
+    <None Include="Resources\RedStar.bmp" />
+    <None Include="Resources\GrandStar.png" />
+    <None Include="Resources\%24this.Icon.ico" />
+    <None Include="Resources\BlueStar.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Hack.io\Hack.io.BCSV\Hack.io.BCSV.csproj">
@@ -233,6 +236,9 @@
       <Project>{389f751d-db2a-4746-b3bc-88e106c361ce}</Project>
       <Name>Hack.io</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scenaristar.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -265,6 +265,8 @@ namespace Scenaristar
                         {
                             MessageBox.Show("Scenario \""+Addme.Name+"\" has an "+(type.Equals("Red") ? "unsupported" : "invalid")+" star type of "+ type+Environment.NewLine+"It will be replaced with a Normal Star");
                             Addme.Type = ScenarioSMG2.StarType.Normal;
+                            MessageBox.Show("Scenario \"" + Addme.Name + "\" has an " + (type.Equals("Blue") ? "unsupported" : "invalid") + " star type of " + type + Environment.NewLine + "It will be replaced with a Normal Star");
+                            Addme.Type = ScenarioSMG2.StarType.Normal;
                         }
                     }
                     if (ScenarioBCSV[i].TryGetValue(FixedHashesSMG2[5], out result))
@@ -453,6 +455,15 @@ namespace Scenaristar
                     break;
                 case ScenarioSMG2.StarType.Green:
                     g.DrawImage(Properties.Resources.GreenStar, 48f, 122f);
+                    break;
+                case ScenarioSMG2.StarType.Red:
+                    g.DrawImage(Properties.Resources.RedStar, 48f, 122f);
+                    break;
+                case ScenarioSMG2.StarType.Grand:
+                    g.DrawImage(Properties.Resources.GrandStar, 48f, 122f);
+                    break;
+                case ScenarioSMG2.StarType.Blue:
+                    g.DrawImage(Properties.Resources.BlueStar, 48f, 122f);
                     break;
                 default:
                     break;
@@ -980,7 +991,7 @@ namespace Scenaristar
         {
             "Thank you for using Scenaristar!",
             "This is the start of the galaxy creation process, or is it the end?",
-            "Legend has it that Red Stars can be an option in the Scenario Type",
+            "Legend has it that Red and Blue Stars are new Scenario Types",
             "Can you imagine a world where Super Mario Galaxy doesn't exist?",
             "Big Yeet"
         };
