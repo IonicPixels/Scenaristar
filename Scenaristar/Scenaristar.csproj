@@ -216,7 +216,6 @@
     <None Include="Resources\CaptainToad.png" />
     <None Include="Resources\RedStar.bmp" />
     <None Include="Resources\GrandStar.png" />
-    <None Include="Resources\%24this.Icon.ico" />
     <None Include="Resources\BlueStar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +237,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\RedStar.png" />
     <Content Include="Scenaristar.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

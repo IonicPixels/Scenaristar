@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("SMG2 Scenario Editor")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Super Hackio Incorporated")]
-[assembly: AssemblyProduct("Scenaristar Extended")]
+[assembly: AssemblyProduct("Scenaristar")]
 [assembly: AssemblyCopyright("Copyright © Super Hackio Incorporated 2019-2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]

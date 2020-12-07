@@ -7,6 +7,9 @@ using Hack.io.BCSV;
 
 namespace GalaxyMaps
 {
+    /// <summary>
+    /// A scenario for Super Mario Galaxy 2
+    /// </summary>
     public class ScenarioSMG2
     {
         /// <summary>
@@ -34,11 +37,11 @@ namespace GalaxyMaps
             /// <summary>
             /// Needs to be hacked into the game.
             /// </summary>
-            Grand,
+            Blue,
             /// <summary>
             /// Needs to be hacked into the game.
             /// </summary>
-            Blue
+            Grand,
 #endif
         }
         /// <summary>
@@ -103,7 +106,13 @@ namespace GalaxyMaps
         /// Time limit for Comets. Only needed for <see cref="CometType.Red" />, <see cref="CometType.Exterminate" />, and optionally <see cref="CometType.Purple" />.
         /// </summary>
         public int TimeLimit;
+        /// <summary>
+        /// Unused
+        /// </summary>
         public int LuigiTimeLimit;
+        /// <summary>
+        /// Unused
+        /// </summary>
         public int Unknown;
         /// <summary>
         /// List of Zones

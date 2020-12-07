@@ -62,6 +62,9 @@ namespace Scenaristar
 
 #if DEBUG
             ScenarioNumNumericUpDown.Maximum = 8;
+            StarGroupBox.Size = new Size(195, 82);
+            LayerGroupBox.Location = new Point(261, 249);
+            LayerGroupBox.Size = new Size(195, 167);
 #endif
         }
         //InfoToolStripStatusLabel.Text = "";
@@ -123,6 +126,10 @@ namespace Scenaristar
             Star4CheckBox.Enabled = Trigger;
             Star5CheckBox.Enabled = Trigger;
             Star6CheckBox.Enabled = Trigger;
+#if DEBUG
+            Star7CheckBox.Enabled = Trigger;
+            Star8CheckBox.Enabled = Trigger;
+#endif
             LayerACheckBox.Enabled = Trigger;
             LayerBCheckBox.Enabled = Trigger;
             LayerCCheckBox.Enabled = Trigger;
@@ -142,6 +149,8 @@ namespace Scenaristar
             AddZoneButton.Enabled = Trigger;
             SubtractZoneButton.Enabled = Trigger;
             RenameZoneButton.Enabled = Trigger;
+            AddToolStripMenuItem.Enabled = Trigger;
+            RemoveToolStripMenuItem.Enabled = Trigger;
         }
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -430,23 +439,23 @@ namespace Scenaristar
                             g.DrawImage(Properties.Resources.PowerStar, 48f, 122f);
                             break;
                         case ScenarioSMG2.CometType.Red:
-                            g.DrawImage(Properties.Resources.SpeedyComet, 48f, 122f);
+                            g.DrawImage(Properties.Resources.SpeedyComet, 48f, 101f);
                             break;
                         case ScenarioSMG2.CometType.Purple:
-                            g.DrawImage(Properties.Resources.PurpleComet, 48f, 122f);
+                            g.DrawImage(Properties.Resources.PurpleComet, 48f, 101f);
                             g.DrawImage(Properties.Resources.PurpleCoin, 342f, 338f);
                             break;
                         case ScenarioSMG2.CometType.Dark:
-                            g.DrawImage(Properties.Resources.DaredevilComet, 48f, 122f);
+                            g.DrawImage(Properties.Resources.DaredevilComet, 48f, 101f);
                             break;
                         case ScenarioSMG2.CometType.Exterminate:
-                            g.DrawImage(Properties.Resources.ExterminateComet, 48f, 122f);
+                            g.DrawImage(Properties.Resources.ExterminateComet, 48f, 101f);
                             break;
                         case ScenarioSMG2.CometType.Mimic:
-                            g.DrawImage(Properties.Resources.CloneComet, 48f, 122f);
+                            g.DrawImage(Properties.Resources.CloneComet, 48f, 101f);
                             break;
                         case ScenarioSMG2.CometType.Quick:
-                            g.DrawImage(Properties.Resources.QuickComet, 48f, 122f);
+                            g.DrawImage(Properties.Resources.QuickComet, 48f, 101f);
                             break;
                     }
                     break;
@@ -454,13 +463,13 @@ namespace Scenaristar
                     g.DrawImage(Properties.Resources.HiddenStarOverlay, 48f, 122f);
                     break;
                 case ScenarioSMG2.StarType.Green:
-                    g.DrawImage(Properties.Resources.GreenStar, 48f, 122f);
+                    g.DrawImage(Properties.Resources.GreenStar, 48f, 98f);
                     break;
                 case ScenarioSMG2.StarType.Red:
                     g.DrawImage(Properties.Resources.RedStar, 48f, 122f);
                     break;
                 case ScenarioSMG2.StarType.Grand:
-                    g.DrawImage(Properties.Resources.GrandStar, 48f, 122f);
+                    g.DrawImage(Properties.Resources.GrandStar, 23f, 101f);
                     break;
                 case ScenarioSMG2.StarType.Blue:
                     g.DrawImage(Properties.Resources.BlueStar, 48f, 122f);
@@ -664,7 +673,13 @@ namespace Scenaristar
             CometComboBox.SelectedIndex = (int)X.Comet;
             AppearenceTextBox.Text = X.Appearence;
             TimeLimitNumericUpDown.Value = X.TimeLimit;
+#if DEBUG
+            bool[] CHECK = X.CalculateStarID(X.PowerStarID, true);
+            Star7CheckBox.Checked = CHECK[6];
+            Star8CheckBox.Checked = CHECK[7];
+#else
             bool[] CHECK = X.CalculateStarID(X.PowerStarID, false);
+#endif
             Star1CheckBox.Checked = CHECK[0];
             Star2CheckBox.Checked = CHECK[1];
             Star3CheckBox.Checked = CHECK[2];
@@ -820,7 +835,11 @@ namespace Scenaristar
                 return;
 
             ScenarioSMG2 X = (ScenarioSMG2)ScenarioListView.SelectedItems[0].Tag;
+#if DEBUG
+            X.CalculateStarID(new CheckBox[8] { Star1CheckBox, Star2CheckBox, Star3CheckBox, Star4CheckBox, Star5CheckBox, Star6CheckBox, Star7CheckBox, Star8CheckBox });
+#else
             X.CalculateStarID(new CheckBox[6] { Star1CheckBox, Star2CheckBox, Star3CheckBox, Star4CheckBox, Star5CheckBox, Star6CheckBox });
+#endif
             StarIDNumericUpDown.Value = X.PowerStarID;
             OriginalFile = false;
         }
@@ -974,7 +993,7 @@ namespace Scenaristar
                 Redraw(tmp - 1);
         }
 
-        #region Timer Stuff
+#region Timer Stuff
         private const string UpdateName = "The Initial Release";
 
         private int StatusState = 0;
@@ -1084,7 +1103,7 @@ namespace Scenaristar
             InfoToolStripStatusLabel.Text = a;
             Scrollnumber++;
         }
-        #endregion
+#endregion
 
         private void MoveZoneUpButton_Click(object sender, EventArgs e)
         {
