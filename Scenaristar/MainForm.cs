@@ -14,7 +14,7 @@ using Hack.io.YAZ0;
 using System.Reflection;
 using Hack.io.Util;
 
-namespace Scenaristar
+namespace Scenaristar                           
 {
     public partial class MainForm : Form
     {

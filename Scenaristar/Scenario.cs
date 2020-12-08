@@ -163,8 +163,8 @@ namespace GalaxyMaps
             if (Checks[3].Checked) starmask ^= 8;
             if (Checks[4].Checked) starmask ^= 16;
             if (Checks[5].Checked) starmask ^= 32;
-            if (Checks.Length < 6 && Checks[6].Checked) starmask ^= 64;
-            if (Checks.Length < 6 && Checks[7].Checked) starmask ^= 128;
+            if (Checks.Length > 6 && Checks[6].Checked) starmask ^= 64;
+            if (Checks.Length > 6 && Checks[7].Checked) starmask ^= 128;
             PowerStarID = starmask;
         }
         /// <summary>
